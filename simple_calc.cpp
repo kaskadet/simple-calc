@@ -6,9 +6,9 @@
 std::vector <int> math_op(const char*);
 
 //                              Operations that are suported
-float sum           (float, float);        float difference   (float, float);
-float multiplication(float, float);        float division     (float, float);
-int remainder       (int, int);
+float sum(float, float);     float dif(float, float);
+float mul(float, float);     float div(float, float);
+int rem  (int, int);
 
 int main(int argc, char **argv){
     if(argc != 2){
@@ -38,10 +38,10 @@ int main(int argc, char **argv){
 
 //                                      Math
         if     (expr[op_id[0]] == '+')  expr.replace(0, op_id[1], std::to_string(sum(amount[0], amount[1])));
-        else if(expr[op_id[0]] == '-')  expr.replace(0, op_id[1], std::to_string(difference(amount[0], amount[1])));
-        else if(expr[op_id[0]] == '*')  expr.replace(0, op_id[1], std::to_string(multiplication(amount[0], amount[1])));
-        else if(expr[op_id[0]] == '/')  expr.replace(0, op_id[1], std::to_string(division(amount[0], amount[1])));
-        else if(expr[op_id[0]] == '%')  expr.replace(0, op_id[1], std::to_string(remainder((int)amount[0], (int)amount[1])));
+        else if(expr[op_id[0]] == '-')  expr.replace(0, op_id[1], std::to_string(dif(amount[0], amount[1])));
+        else if(expr[op_id[0]] == '*')  expr.replace(0, op_id[1], std::to_string(mul(amount[0], amount[1])));
+        else if(expr[op_id[0]] == '/')  expr.replace(0, op_id[1], std::to_string(div(amount[0], amount[1])));
+        else if(expr[op_id[0]] == '%')  expr.replace(0, op_id[1], std::to_string(rem((int)amount[0], (int)amount[1])));
     }
 
 //                                 Printing result and cutoff unnecessary '0'
@@ -50,11 +50,11 @@ int main(int argc, char **argv){
     return 0;
 }
 
-float sum           (float a, float b){return a+b;}
-float difference    (float a, float b){return a-b;}
-float multiplication(float a, float b){return a*b;}
-float division      (float a, float b){return a/b;}
-int remainder       (int a, int b)    {return a%b;}
+float sum(float a, float b){return a+b;}
+float dif(float a, float b){return a-b;}
+float mul(float a, float b){return a*b;}
+float div(float a, float b){return a/b;}
+int rem  (int a, int b)    {return a%b;}
 
 std::vector <int> math_op(const char *expr){
     std::vector <int> op_id;
