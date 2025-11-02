@@ -1,2 +1,2 @@
 # simple-calc
-Simple linear calculator writed in c++
+Simple linear calculator written in c++
